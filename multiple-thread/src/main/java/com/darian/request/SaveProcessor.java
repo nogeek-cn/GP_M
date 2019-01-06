@@ -17,10 +17,10 @@ public class SaveProcessor extends Thread implements RequestProcessor {
 
     @Override
     public void run() {
-        while (true){
+        while (true) {
             try {
                 Request requset = linkedBlockingQueue.take();
-                System.out.println("print data:" + requset);
+                System.out.println("[" + Thread.currentThread().getName() + "] " + "save data:" + requset);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

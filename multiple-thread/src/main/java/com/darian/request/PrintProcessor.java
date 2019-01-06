@@ -20,10 +20,10 @@ public class PrintProcessor extends Thread implements RequestProcessor {
 
     @Override
     public void run() {
-        while (true){
+        while (true) {
             try {
                 Request requset = linkedBlockingQueue.take();
-                out.println("print Data:" + requset);
+                out.println("[" + Thread.currentThread().getName() + "] " + "print Data:" + requset);
                 nextProcess.processorRequest(requset);
             } catch (InterruptedException e) {
                 e.printStackTrace();

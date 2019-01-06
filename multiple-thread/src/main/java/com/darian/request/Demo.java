@@ -6,6 +6,8 @@ package com.darian.request;
  * zookeeper 就是类似的处理，一方面，你可以通过你的处理把职责划分开，
  * 一方面你可以通过异步线程的处理去提升你程序的性能
  * 合理的利用你 CPU 的资源
+ *
+ * 这个和 zookeeper 里边非常像
  */
 public class Demo {
     private final PrintProcessor printProcessor;
@@ -20,7 +22,8 @@ public class Demo {
     public static void main(String[] args) {
         Request requset = new Request();
         requset.setName("darian");
-        new Demo().doTest(requset);
+        Demo demo = new Demo();
+        demo.doTest(requset);
     }
 
     public void doTest(Request request) {
