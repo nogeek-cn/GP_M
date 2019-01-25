@@ -7,22 +7,23 @@ public class SynchronizedDemo {
     private static int count = 0;
 
     Object lock = new Object();
-    public void demo3(){
-        synchronized(lock){
+
+    public void demo3() {
+        synchronized (lock) {
 
         }
     }
 
-    public void demo(){
+    public void demo() {
         // 全局锁，多个对象是同一把锁
-        synchronized (SynchronizedDemo.class){
+        synchronized (SynchronizedDemo.class) {
 
         }
     }
 
-    public void demo1(){
+    public void demo1() {
         // 每个实例是不同的锁
-        synchronized (this){
+        synchronized (this) {
 
         }
     }

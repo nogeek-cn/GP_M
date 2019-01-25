@@ -19,7 +19,7 @@ public class JedisClientDemo {
 //        JedisSentinelPool jedisSentinelPool = new JedisSentinelPool();
         //        线程池
         JedisPool jedisPool = null;
-        jedisPool.getResource().set("darian","hello world");
+        jedisPool.getResource().set("darian", "hello world");
         Set<HostAndPort> hostAndPortSet = new HashSet<>();
         hostAndPortSet.add(new HostAndPort("192.168.40.128", 6379));
         hostAndPortSet.add(new HostAndPort("192.168.40.128", 6379));

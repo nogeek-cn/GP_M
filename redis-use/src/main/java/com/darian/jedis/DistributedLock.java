@@ -66,8 +66,8 @@ public class DistributedLock {
                 "then return redis.call(\"del\",KEYS[1]) " +
                 "else return 0 end";
 
-        Long rs = (Long)jedis.eval(lua, 1, new String[]{lockKey, identifier});
-        if(rs.intValue() > 0){
+        Long rs = (Long) jedis.eval(lua, 1, new String[]{lockKey, identifier});
+        if (rs.intValue() > 0) {
             return true;
         }
         return false;

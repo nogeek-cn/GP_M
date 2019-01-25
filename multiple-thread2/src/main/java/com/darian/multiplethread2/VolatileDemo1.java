@@ -7,7 +7,7 @@ public class VolatileDemo1 {
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() -> {
             int i = 9;
-            while (!stop){
+            while (!stop) {
                 i++;
             }
         });

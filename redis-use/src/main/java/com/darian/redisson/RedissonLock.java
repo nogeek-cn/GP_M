@@ -20,7 +20,7 @@ public class RedissonLock {
             rLock.unlock();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             // 释放锁
             rLock.unlock();
             redissonClient.shutdown();

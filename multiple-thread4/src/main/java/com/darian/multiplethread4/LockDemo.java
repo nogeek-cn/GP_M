@@ -8,14 +8,14 @@ public class LockDemo {
 
     private static int count = 0;
 
-    public static void incr(){
+    public static void incr() {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         lock.lock(); // 获得锁
-        count ++;
+        count++;
         lock.unlock();
     }
 }

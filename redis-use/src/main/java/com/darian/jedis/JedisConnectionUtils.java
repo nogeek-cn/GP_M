@@ -14,7 +14,7 @@ public class JedisConnectionUtils {
         pool = new JedisPool(jedisPoolConfig, "", 6379);
     }
 
-    public static Jedis getJedis(){
+    public static Jedis getJedis() {
         return pool.getResource();
     }
 }

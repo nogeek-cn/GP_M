@@ -28,6 +28,7 @@ public class PrintProcessor extends Thread implements RequestProcessor {
             }
         }
     }
+
     @Override
     public void processorRequest(Request request) {
         linkedBlockingQueue.add(request);

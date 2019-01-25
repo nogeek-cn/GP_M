@@ -1,7 +1,7 @@
 package com.darian.jedis;
 
 
-public class UnitTest extends Thread{
+public class UnitTest extends Thread {
 
     public static void main(String[] args) {
         UnitTest unitTest = new UnitTest();
@@ -9,7 +9,7 @@ public class UnitTest extends Thread{
             new Thread(unitTest, "tName" + i).start();
         }
     }
-    
+
     @Override
     public void run() {
         while (true) {

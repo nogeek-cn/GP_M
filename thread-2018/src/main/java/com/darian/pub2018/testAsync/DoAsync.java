@@ -9,8 +9,8 @@ import org.springframework.scheduling.annotation.Async;
 public class DoAsync {
 
     @Async
-    public void doAsync(){
-        System.out.printf("[Thread: %s ]",Thread.currentThread());
+    public void doAsync() {
+        System.out.printf("[Thread: %s ]", Thread.currentThread());
         System.out.println();
     }
 }

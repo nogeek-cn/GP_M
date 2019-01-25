@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class InterruptDemo {
     private static int i;
+
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() -> {
             // 我去判断是否中断这个线程

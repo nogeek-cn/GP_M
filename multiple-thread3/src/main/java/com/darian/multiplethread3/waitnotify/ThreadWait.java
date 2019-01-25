@@ -9,7 +9,7 @@ public class ThreadWait extends Thread {
 
     @Override
     public void run() {
-        synchronized (lock){
+        synchronized (lock) {
             System.out.println("开始执行 ThreadWait ");
             try {
                 lock.wait();

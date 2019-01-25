@@ -4,7 +4,7 @@ public class ThreadDemo {
     private static volatile ThreadDemo instance = null;
 
     public static ThreadDemo getInstance() {
-        if (instance==null){
+        if (instance == null) {
             instance = new ThreadDemo();
         }
         return instance;

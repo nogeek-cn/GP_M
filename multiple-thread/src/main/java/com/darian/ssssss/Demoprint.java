@@ -1,7 +1,6 @@
 package com.darian.ssssss;
 
 
-
 public class Demoprint {
     private final PrintProcessorZheng printProcessorZheng;
 
@@ -15,10 +14,10 @@ public class Demoprint {
 
     public static void main(String[] args) {
         Demoprint demo = new Demoprint();
-            demo.doTest(1);
+        demo.doTest(1);
     }
 
     public void doTest(Integer integer) {
-       printProcessorZheng.print(integer);
+        printProcessorZheng.print(integer);
     }
 }

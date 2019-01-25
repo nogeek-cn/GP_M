@@ -9,13 +9,13 @@ public class VolatileSortDemo {
     private static int x = 0, y = 0;
     private static int a = 0, b = 0;
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(2); // 创建线程池
         CompletionService completionService = new ExecutorCompletionService(executorService);
         completionService.submit(() -> {
             a = 1;
             x = b;
-        },null);
+        }, null);
         completionService.submit(() -> {
             b = 1;
             y = a;
