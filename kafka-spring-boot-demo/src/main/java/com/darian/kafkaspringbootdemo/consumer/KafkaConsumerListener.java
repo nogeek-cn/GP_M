@@ -20,5 +20,4 @@ public class KafkaConsumerListener {
         System.out.println("Kafka darian消费者监听器，接收到消息：" + message);
     }
 
-
 }
