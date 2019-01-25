@@ -3,6 +3,7 @@ package com.darian.javakafka.JAVAKafkaAPI;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.serialization.IntegerDeserializer;
 
 import java.util.Collections;
 import java.util.Properties;
@@ -20,8 +21,10 @@ public class KafkaConsumerDemo extends Thread {
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
         // 间隔时间
         properties.put(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG, "1000");
-        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-                "org.apache.kafka.common.serialization.IntegerDeserializer");
+//        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
+//                "org.apache.kafka.common.serialization.IntegerDeserializer");
+
+        properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class.getName());
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringDeserializer");
         // 从最早的开始
