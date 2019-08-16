@@ -18,8 +18,17 @@
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
+/build/
+
+### VS Code ###
+.vscode/
+/booking-service/target
+/.settings
+/.classpath
+/.project
+*.iml
+*.idea

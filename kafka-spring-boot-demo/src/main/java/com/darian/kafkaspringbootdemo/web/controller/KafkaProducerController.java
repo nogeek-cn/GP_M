@@ -24,10 +24,10 @@ public class KafkaProducerController {
             @PathVariable String topic,
             @RequestParam String message) {
         if ((!"darian".equals(topic)) && (!"test".equals(topic))) {
-            return new TopicMessage(topic, message, false, "topic 不存在");
+            return new TopicMessage(topic, message, false, "topic【" + topic + "】 不存在");
         }
         ListenableFuture<SendResult<String, String>> send = kafkaTemplate.send(topic, message);
-        
+
         return new TopicMessage(topic, message, true, "success");
     }
 

@@ -8,10 +8,10 @@ import org.apache.kafka.common.serialization.IntegerDeserializer;
 import java.util.Collections;
 import java.util.Properties;
 
-public class KafkaConsumerDemo extends Thread {
+public class KafkaConsumerDem2 extends Thread {
     private final KafkaConsumer kafkaConsumer;
 
-    public KafkaConsumerDemo(String topic) {
+    public KafkaConsumerDem2(String topic) {
         // 设置属性
         Properties properties = new Properties();
         properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
@@ -45,6 +45,6 @@ public class KafkaConsumerDemo extends Thread {
     }
 
     public static void main(String[] args) {
-        new KafkaConsumerDemo("test").start();
+        new KafkaConsumerDem2("test").start();
     }
 }

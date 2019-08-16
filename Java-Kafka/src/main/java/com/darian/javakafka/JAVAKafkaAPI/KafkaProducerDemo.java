@@ -24,6 +24,7 @@ public class KafkaProducerDemo extends Thread {
                 "org.apache.kafka.common.serialization.IntegerSerializer");
         properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
                 "org.apache.kafka.common.serialization.StringSerializer");
+        properties.put(ProducerConfig.PARTITIONER_CLASS_CONFIG, MyParitition.class.getName());
         producer = new KafkaProducer<Integer, String>(properties);
         this.topic = topic;
         this.isAsync = isAsync;
@@ -32,11 +33,11 @@ public class KafkaProducerDemo extends Thread {
     @Override
     public void run() {
         int num = 0;
-        while (num < 50) {
+        while (num < 500000) {
             String message = "message_" + num;
             System.err.println("[producer message]:" + message);
             if (isAsync) { // 异步发送
-                producer.send(new ProducerRecord<>(topic, message), (recordMetadata, e) -> {
+                producer.send(new ProducerRecord<>(topic,1, message), (recordMetadata, e) -> {
                     if (recordMetadata != null) {
                         System.err.println("[async-offset]:" + recordMetadata.offset() +
                                 "->[partition]:" + recordMetadata.partition());
@@ -52,15 +53,15 @@ public class KafkaProducerDemo extends Thread {
                 }
             }
             num++;
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                Thread.sleep(1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         }
     }
 
     public static void main(String[] args) {
-        new KafkaProducerDemo("test", true).start();
+        new KafkaProducerDemo("testaaa", true).start();
     }
 }

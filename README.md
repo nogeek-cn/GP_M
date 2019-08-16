@@ -20,9 +20,15 @@
 
 - kafka 的 apache 的API
 
+
+
 ##### Kafka-spring-boot-demo
 
 - Kafka 整合 Spring boot 实现不同的 topic 不同的订阅
 
-
+  ```http
+  localhost:8080/message/send/{topic}?message=2222
+  localhost:8080/message/send/test?message=2222
+  localhost:8080/message/send/darian?message=2222
+  ```
 
